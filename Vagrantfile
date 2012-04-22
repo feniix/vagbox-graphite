@@ -13,10 +13,6 @@ Vagrant::Config.run do |config|
   # end
 
   config.vm.provision :chef_solo do |chef|
-    chef.add_recipe "mysql"
-    chef.add_role "web"
-  
-    # You may also specify custom JSON attributes:
-    chef.json = { :mysql_password => "foo" }
+    chef.add_recipe "graphite"
   end
 end
