@@ -17,11 +17,11 @@ Vagrant::Config.run do |config|
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe "graphite"
     chef.json = {
-      "graphite" => {
-        "carbon" => {
-          "line_receiver_interface" => "#{address}",
-          "pickle_receiver_interface" => "#{address}",
-          "cache_query_interface" => "#{address}"
+      :graphite => {
+        :carbon => {
+          :line_receiver_interface => "#{address}",
+          :pickle_receiver_interface => "#{address}",
+          :cache_query_interface => "#{address}"
         }
       }
     } 
